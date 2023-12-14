@@ -1,0 +1,35 @@
+
+<table class="table w-75 p-3 ">
+<%= flash[:notice] %>
+  <thead class="table-dark">
+    <tr> 
+      <th>Name</th>
+      <th>Steps</th>
+      <th>Pushups</th>
+      <th>Situps</th>
+      <th>Pullups</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users&.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.steps %></td>
+        <td><%= user.pushups %></td>
+        <td><%= user.situps %></td>
+        <td><%= user.pullups %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div>
+  <h3 class=" p-2 m-2">Import User Data</h3>
+  <%= form_tag import_users_path,class:"p-2 m-2", multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag 'Import CSV',  class:"btn btn-success"  %>
+  <% end %>
+</div>
+<%= link_to 'Export CSV', export_csv_users_path(format: :csv), class:"btn btn-success p-2 m-2" %>
+
+
