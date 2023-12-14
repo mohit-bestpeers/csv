@@ -17,7 +17,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
   # Disable serving static files from the `/public` folder by default since
 # Apache or NGINX already handles this.
-config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present? || ENV['RENDER'].present?
+  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present? || ENV['RENDER'].present?
 
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
