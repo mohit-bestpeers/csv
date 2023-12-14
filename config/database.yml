@@ -83,12 +83,6 @@ test:
 #
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
-#
 production:
   <<: *default
-  adapter: postgresql
-  database: <%= ENV['TEMPLATEAPP_DATABASE'] %>
-  username: <%= ENV['TEMPLATEAPP_DATABASE_USER'] %>
-  password: <%= ENV['TEMPLATEAPP_DATABASE_PASSWORD'] %>
-  host: <%= ENV['TEMPLATE_DATABASE_HOSTNAME'] %>
-  port: 5432
+  url: <%= ENV['postgres://mohit:8JWtc3Iq3Kj8145Z5cWlZXK6uiBLeEBD@dpg-cltam5i1hbls73ec9200-a/csv_iqp6'] %>
